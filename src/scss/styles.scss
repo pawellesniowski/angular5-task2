@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+// import variables: 
+// @import './_vars.scss';
+@import './vars'; // the same like above. It knows.
+
+h1 {
+    color: $color-h1;
+}
