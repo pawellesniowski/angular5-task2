@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,8 +11,15 @@ export class CourseListComponent implements OnInit {
 
   courses = [];
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
 
+  }
+
+  getCourses() {
+    this.httpClient.get('http://localhost:4002/courses')
+      .subscribe(
+        (data: any) => this.courses = data
+      );
   }
 
   ngOnInit() {

@@ -1,4 +1,11 @@
-<p>
-  course-list works!
-</p>
+<button (click)="getCourses()">Get courses</button>
+<ul>
+  <app-course-list-item
+    *ngFor="let item of courses" [course]="item"
+  >
+  </app-course-list-item>
+
+</ul>
+
+
 
