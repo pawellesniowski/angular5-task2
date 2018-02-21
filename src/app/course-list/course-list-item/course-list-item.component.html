@@ -1,4 +1,20 @@
 <li>
-  {{course.name}}
-</li>
 
+  <div class="course-list-item">
+    <div class="left-side">
+      <div class="course-list-item-header">
+        <div>Video course: "{{course.name}}" Duration: {{course.length}} min</div>
+        <div>{{course.date}}</div>
+      </div>
+      <div class="course-list-item-description">
+        <p>{{course.description}}</p>
+      </div>
+
+    </div>
+    <div class="right-side">
+      <button>Edit Course</button>
+      <button (click)="onDeleteButton(course.id)">Delete</button>
+    </div>
+  </div>
+
+</li>

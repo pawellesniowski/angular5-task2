@@ -1,3 +1,12 @@
-<p>
-  toolbox works!
-</p>
+<div class="toolbox">
+  <div class="left-side">
+    <input type="text" placeholder="name fragment or date" [(ngModel)]="inputText">
+    <button (click)="onInputClick()">Find</button>
+  </div>
+
+  <div class="right-side">
+    <button>Add course</button>
+  </div>
+
+</div>
+

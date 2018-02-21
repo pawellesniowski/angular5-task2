@@ -1,0 +1,9 @@
+$border-color: black;
+
+header {
+    margin: 10px;
+    border: 1px solid $border-color;
+    display: flex;
+    justify-content: space-between;
+}
+

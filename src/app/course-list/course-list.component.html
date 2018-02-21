@@ -1,11 +1,15 @@
-<button (click)="getCourses()">Get courses</button>
-<ul>
-  <app-course-list-item
-    *ngFor="let item of courses" [course]="item"
-  >
-  </app-course-list-item>
+<div class="course-list">
 
-</ul>
+  <ul>
+    <app-course-list-item
+      (deleteCourse)="onDeleteMethod($event)"
+      *ngFor="let item of courses" [course]="item"
+    >
+    </app-course-list-item>
+  </ul>
+  
+</div>
+
 
 
 

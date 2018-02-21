@@ -12,14 +12,21 @@ export class CourseListComponent implements OnInit {
   courses = [];
 
   constructor(private httpClient: HttpClient) {
-
+    this.getCourses();
   }
 
   getCourses() {
     this.httpClient.get('http://localhost:4002/courses')
       .subscribe(
-        (data: any) => this.courses = data
+        (data: any) => {
+          this.courses = data;
+        },
+        (error) => console.log(error)
       );
+  }
+
+  onDeleteMethod(event) {
+    console.log('onDeleteMethod from Parent: ', event);
   }
 
   ngOnInit() {

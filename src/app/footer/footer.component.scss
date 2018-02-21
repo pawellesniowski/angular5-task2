@@ -1,0 +1,8 @@
+$border-color: black;
+
+footer {
+    margin: 10px;
+    border: 1px solid $border-color;
+    display: flex;
+    justify-content: center;
+}
