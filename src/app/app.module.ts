@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -13,6 +14,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { ToolboxComponent } from './toolbox/toolbox.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseListItemComponent } from './course-list/course-list-item/course-list-item.component';
+import { AddCourseComponent } from './pages/add-course/add-course.component';
+import { ServerService } from './services/server.service';
 
 
 
@@ -26,14 +29,15 @@ import { CourseListItemComponent } from './course-list/course-list-item/course-l
     LoginComponent,
     ToolboxComponent,
     CourseListComponent,
-    CourseListItemComponent
+    CourseListItemComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

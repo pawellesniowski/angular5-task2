@@ -1,13 +1,14 @@
 import {
   Component,
   OnInit,
-  OnChanges,
   SimpleChange,
   DoCheck,
   AfterContentInit,
   AfterContentChecked,
   AfterViewInit,
   OnDestroy,
+  EventEmitter,
+  Output
  } from '@angular/core';
 
 @Component({
@@ -15,23 +16,34 @@ import {
   templateUrl: './toolbox.component.html',
   styleUrls: ['./toolbox.component.scss']
 })
-export class ToolboxComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
+
+export class ToolboxComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
   inputText: string;
+  @Output() CreateCourse = new EventEmitter<any>();
+  @Output() InputFind = new EventEmitter<any>();
 
   constructor() {
     console.log('constructor from toolbox');
-   }
-
-  onInputClick() {
-    console.log(this.inputText);
   }
 
+  onCreateCourse() {
+    this.CreateCourse.emit();
+  }
+
+  onInputFind() {
+    console.log('onInputfind: ', this.inputText);
+    this.InputFind.emit(this.inputText);
+  }
+
+
+
+
+
+
+
+  // hooks:
   ngOnInit() {
     console.log('ngOnInit from toolbox');
-  }
-
-  ngOnChanges(changes: SimpleChange) {
-    console.log('ngOnChanges from toolbox');
   }
 
   ngDoCheck() {

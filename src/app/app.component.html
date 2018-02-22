@@ -1,6 +1,11 @@
 <app-header></app-header>
-<app-toolbox></app-toolbox>
-<app-course-list></app-course-list>
+<app-toolbox 
+    (CreateCourse)="createCourse()"
+    (InputFind)="inputFind($event)"
+    *ngIf="!creatingNewCourse"
+></app-toolbox>
+<app-course-list *ngIf="!creatingNewCourse"></app-course-list>
+<app-add-course *ngIf="creatingNewCourse" (BackToCourses)="backToCourses()"></app-add-course>
 <app-footer></app-footer>
 
 
