@@ -16,6 +16,7 @@ import { CourseListComponent } from './course-list/course-list.component';
 import { CourseListItemComponent } from './course-list/course-list-item/course-list-item.component';
 import { AddCourseComponent } from './pages/add-course/add-course.component';
 import { ServerService } from './services/server.service';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -37,7 +38,7 @@ import { ServerService } from './services/server.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ServerService],
+  providers: [ServerService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

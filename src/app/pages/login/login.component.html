@@ -1,3 +1,18 @@
-<p>
-  login works!
-</p>
+<app-header></app-header>
+
+<div class="login-page">
+  <div class="login-page-login">
+    <label for="login">Login</label>
+    <input type="text" id="login" placeholder="Login" [(ngModel)]="login">
+  </div>
+
+<div class="login-page-password">
+  <label for="pas">Password</label>
+  <input type="text" id="pas" placeholder="Login" [(ngModel)]="password">
+</div>
+
+  <button (click)="onLoginEnter()">Enter</button>
+</div>
+
+
+<app-footer></app-footer>

@@ -15,7 +15,7 @@ export class AddCourseComponent implements OnInit {
   constructor(private serverService: ServerService) { }
 
   onAddCourse() {
-    this.serverService.storeCourses(this.courseName, this.courseDescription)
+    this.serverService.createCourse(this.courseName, this.courseDescription)
     .subscribe(
       (data: any) => {
         console.log(data);

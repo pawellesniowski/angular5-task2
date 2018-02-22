@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ServerService } from '../services/server.service';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,17 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  @Input() loginPageActive: boolean;
+
+  constructor(private serverService: ServerService, private authService: AuthService) {}
+
+  currentUser: {};
+
+  ngOnInit() {
+    this.authService.login();
+    this.currentUser = this.authService.getUserInfo();
+  }
 
   onCourses() {
     this.serverService.getList()
@@ -17,9 +29,13 @@ export class HeaderComponent implements OnInit {
       );
   }
 
-  constructor(private serverService: ServerService) { }
-
-  ngOnInit() {
+  onLogout() {
+    this.authService.logout();
   }
+
+  onLogin() {
+    this.authService.login();
+  }
+
 
 }
