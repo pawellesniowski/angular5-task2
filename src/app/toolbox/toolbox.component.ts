@@ -31,7 +31,6 @@ export class ToolboxComponent implements OnInit, DoCheck, AfterContentInit, Afte
   }
 
   onInputFind() {
-    console.log('onInputfind: ', this.inputText);
     this.InputFind.emit(this.inputText);
   }
 

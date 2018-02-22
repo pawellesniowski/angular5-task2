@@ -25,31 +25,6 @@ export class AddCourseComponent implements OnInit {
     );
   } // end of onAddCourse()
 
-  // onAddCourse() {
-  //   console.log('onAddCourse: ', this.courseName);
-  //   // wyslij do bazy danych:
-  //   this.httpClient.post('http://localhost:4002/courses', {
-  //     name: this.courseName,
-  //     description: this.courseDescription,
-  //     isTopRated: false,
-  //     date: new Date(),
-  //     authors: [
-  //       {
-  //         id: 5653,
-  //         firstName: 'Leblanc',
-  //         lastName: 'Bradley'
-  //       }
-  //     ],
-  //     length: Math.floor(Math.random() * 100)
-  //   })
-  //   .subscribe(
-  //     (data: any) => {
-  //       console.log(data);
-  //       this.onBackToCourses();
-  //     }
-  //   );
-  // } // end of onAddCourse()
-
   onBackToCourses() {
     this.BackToCourses.emit();
   }

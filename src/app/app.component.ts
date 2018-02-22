@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ServerService } from './services/server.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,8 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   creatingNewCourse = false;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private serverService: ServerService) {
+  }
 
   createCourse() {
     console.log('display create course page');
@@ -21,14 +24,12 @@ export class AppComponent {
   }
 
   inputFind(id) {
-    console.log('id passed from toolbar to app.component: ', id);
-
-    this.httpClient.get(`http://localhost:4002/courses/?id=${Number(id)}`)
-    .subscribe(
-      (data: any) => {
-        console.log(data);
-      },
-      (error) => console.log(error)
+    this.serverService.getCourseById(id)
+      .subscribe(
+        (data: any) => {
+          console.log(data);
+        },
+        (error) => console.log(error)
     );
   }
 

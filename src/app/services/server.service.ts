@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable()
 export class ServerService {
 
     constructor(private httpClient: HttpClient) {}
 
     // getAllcourses:
+    getList() {
+        return this.httpClient.get('http://localhost:4002/courses');
+    }
 
-    // getCourseById:
-
-    storeCourses(courseName: string, courseDescription: string) {
+    createCourse(courseName: string, courseDescription: string) {
         return this.httpClient.post('http://localhost:4002/courses', {
                 name: courseName,
                 description: courseDescription,
@@ -25,7 +27,12 @@ export class ServerService {
                 ],
                 length: Math.floor(Math.random() * 1000)
               });
-    } // end of storeCourses
+    } // end of create course method
+
+    // getCourseById:
+    getCourseById(id) {
+        return this.httpClient.get(`http://localhost:4002/courses/?id=${Number(id)}`);
+    }
 
     // updateCourse():
     updateCourse(id: number, courseNewName: string, courseNewDescription: string) {
@@ -33,8 +40,9 @@ export class ServerService {
     }
 
     // deleteCourse():
-    deleteCourse(id: number) {
-        console.log('delete course, ID: ', id);
+    deleteCourse(id) {
+        console.log('delete course: ', id);
+        return this.httpClient.delete(`http://localhost:4002/courses/${Number(id)}`);
     }
 
 }
