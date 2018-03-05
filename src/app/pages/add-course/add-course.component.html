@@ -1,7 +1,33 @@
-<input type="text" placeholder="course name" [(ngModel)]="courseName">
-<input type="text" placeholder="course description" [(ngModel)]="courseDescription">
-<button (click)="onAddCourse()">Add Course</button>
-<button (click)="onBackToCourses()">Back To Courses</button>
+<div class="add-course-page">
+    <div class="add-course-form">
+
+        <div class="add-course-form-item">
+            <label for="course-name" class="course-name">Course Name</label>
+            <input type="text" placeholder="course name" id="course-name" [(ngModel)]="courseName">            
+        </div>
+
+        <div class="add-course-form-item">
+            <label for="course-description" class="course-description">Course Description</label>
+            <textarea 
+                name="course-description" 
+                id="course-description" 
+                cols="40" rows="2" 
+                placeholder="course description" 
+                [(ngModel)]="courseDescription"
+            ></textarea>
+        </div>
+
+        <div class="add-course-form-item">
+            <button (click)="onAddCourse()">Add</button>
+            <button (click)="onBackToCourses()">Back</button>
+        </div>
+ 
+
+    </div> <!-- end of add-course-form form -->
+</div> <!-- end of add-course-page form -->
+
+
+
 
 
 

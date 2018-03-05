@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
+    isAuth = false;
 
     constructor(private httpclient: HttpClient) {}
 
@@ -11,14 +12,13 @@ export class AuthService {
         userName: string,
         userEmail: string
     };
-    isAuthenticated = false;
 
     login() {
         this.user = {
             userName: 'Jan Kowalski',
             userEmail: 'jan@kowalski.com'
         };
-        this.isAuthenticated = true;
+        this.isAuth = true;
         console.log(`Welcome ${this.user.userName}. You are loggedin!`);
     }
 
@@ -28,8 +28,12 @@ export class AuthService {
             userName: '',
             userEmail: ''
         };
-        this.isAuthenticated = false;
+        this.isAuth = false;
         console.log('you have logged out', this.user);
+    }
+
+    isAuthenticated() {
+        return this.isAuth;
     }
 
     getUserInfo() {

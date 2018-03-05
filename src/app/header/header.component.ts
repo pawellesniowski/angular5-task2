@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ServerService } from '../services/server.service';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
@@ -6,7 +6,8 @@ import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
 
@@ -35,6 +36,10 @@ export class HeaderComponent implements OnInit {
 
   onLogin() {
     this.authService.login();
+  }
+
+  isAuth() {
+    return true;
   }
 
 

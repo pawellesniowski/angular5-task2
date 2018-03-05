@@ -1,10 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+
+
 import { ServerService } from '../../services/server.service';
 
 @Component({
   selector: 'app-course-list-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './course-list-item.component.html',
-  styleUrls: ['./course-list-item.component.scss']
+  styleUrls: ['./course-list-item.component.scss'],
 })
 export class CourseListItemComponent implements OnInit {
   @Input() course: {id: number, name: string, description: string, isTopRated: boolean, date: string, length: number};
@@ -14,14 +17,21 @@ export class CourseListItemComponent implements OnInit {
 
   onDeleteButton(id) {
     this.deleteCourse.emit(id);
+
     this.serverService.deleteCourse(id)
       .subscribe(
-        () => console.log('item was deleted, id: ', id)
-      );
-
-  }
+        () => {
+          alert(`Course was deleted`);
+        },
+        (error: any) => console.log('error from onDeleteButton', error)
+    );
+  } // end of onDeletebutton()
 
   ngOnInit() {
+  }
+
+  ngdoCheck() {
+    this.serverService.getList(); // what hook does this go to.
   }
 
 }

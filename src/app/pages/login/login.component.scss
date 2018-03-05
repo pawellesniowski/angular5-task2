@@ -1,6 +1,19 @@
 .login-page {
     margin: 10px;
+    height: 90vh;
     display: flex;
-    flex-direction: column;
-    max-width: 50%;
+
+}
+
+.login-form {
+    margin: 100px;
+}
+
+.login-item {
+    margin: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
 }

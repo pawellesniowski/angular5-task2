@@ -8,13 +8,15 @@ import {
   AfterViewInit,
   OnDestroy,
   EventEmitter,
-  Output
+  Output,
+  ChangeDetectionStrategy
  } from '@angular/core';
 
 @Component({
   selector: 'app-toolbox',
   templateUrl: './toolbox.component.html',
-  styleUrls: ['./toolbox.component.scss']
+  styleUrls: ['./toolbox.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class ToolboxComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {

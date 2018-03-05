@@ -7,7 +7,6 @@ export class ServerService {
 
     constructor(private httpClient: HttpClient) {}
 
-    // getAllcourses:
     getList() {
         return this.httpClient.get('http://localhost:4002/courses');
     }
@@ -41,8 +40,12 @@ export class ServerService {
 
     // deleteCourse():
     deleteCourse(id) {
-        console.log('delete course: ', id);
-        return this.httpClient.delete(`http://localhost:4002/courses/${Number(id)}`);
+        const result = confirm('Want to delete this course ?');
+        if (result) {
+            console.log('delete course: ', id);
+            return this.httpClient.delete(`http://localhost:4002/courses/${Number(id)}`);
+        }
+
     }
 
 }
