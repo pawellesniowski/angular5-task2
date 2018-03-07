@@ -25,7 +25,7 @@ export class CourseListComponent implements OnInit {
     this.serverService.getList()
       .subscribe(
         (data: any) => {
-          this.courses = data;
+          this.courses = data.reverse();
           console.log(this.courses);
           this.changeDetector.markForCheck();
         },

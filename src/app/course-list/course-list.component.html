@@ -11,8 +11,9 @@
     <ul>
       <app-course-list-item
         (deleteCourse)="onDeleteMethod($event)"
-        *ngFor="let item of courses" [course]="item"
-      >
+        *ngFor="let item of courses | slice:0:3" [course]="item"
+
+      >        <!--  can we use slice pipe here to cut courses array ???-->
       </app-course-list-item>
     </ul>
   </ng-template>
