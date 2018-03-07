@@ -1,10 +1,19 @@
-<li>
+<!-- <li [class.top-rated-border]="course.isTopRated"> -->
+<li 
+  appCreationDateBorder 
+  [createdDate]= "course.date" 
+  [ngClass]="{'top-rated-border': course.isTopRated}"
+>
 
-  <div class="course-list-item">
+  <div class="course-list-item" >
     <div class="left-side">
       <div class="course-list-item-header">
-        <div>Video course: "{{course.name}}" Duration: {{course.length}} min</div>
-        <div>date</div>
+        <div>
+          <span class="course-title">"{{course.name | uppercase }}"</span>
+          <span class="course-time">Time: {{course.length }} min</span>
+          <span class="course-top-rated-star" *ngIf="course.isTopRated">&#9734;</span>
+        </div>
+        <div>{{course.date | date:"dd/MM/yy"}}</div>
       </div>
       <div class="course-list-item-description">
         <p>{{course.description}}</p>

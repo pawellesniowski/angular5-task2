@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { CreationDateBorderDirective } from '../../directives/creationDateBorder.directive';
 
 
 import { ServerService } from '../../services/server.service';
@@ -15,7 +16,7 @@ export class CourseListItemComponent implements OnInit {
 
   constructor(private serverService: ServerService) {  }
 
-  onDeleteButton(id) {
+  onDeleteButton(id: number) {
     this.deleteCourse.emit(id);
 
     this.serverService.deleteCourse(id)

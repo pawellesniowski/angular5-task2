@@ -1,14 +1,7 @@
 import {
   Component,
-  OnInit,
-  SimpleChange,
-  DoCheck,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  OnDestroy,
-  EventEmitter,
   Output,
+  EventEmitter,
   ChangeDetectionStrategy
  } from '@angular/core';
 
@@ -19,13 +12,12 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class ToolboxComponent implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
+export class ToolboxComponent {
   inputText: string;
   @Output() CreateCourse = new EventEmitter<any>();
   @Output() InputFind = new EventEmitter<any>();
 
   constructor() {
-    console.log('constructor from toolbox');
   }
 
   onCreateCourse() {
@@ -34,37 +26,6 @@ export class ToolboxComponent implements OnInit, DoCheck, AfterContentInit, Afte
 
   onInputFind() {
     this.InputFind.emit(this.inputText);
-  }
-
-
-
-
-
-
-
-  // hooks:
-  ngOnInit() {
-    console.log('ngOnInit from toolbox');
-  }
-
-  ngDoCheck() {
-    console.log('ngDoCheck from toolbox');
-  }
-
-  ngAfterContentInit() {
-    console.log('ngAfterContentInit from toolbox');
-  }
-
-  ngAfterContentChecked() {
-    console.log('ngAfterContentChecked from toolbox');
-  }
-
-  ngAfterViewInit() {
-    console.log('ngAfterViewInit from toolbox');
-  }
-
-  ngOnDestroy() {
-    console.log('ngOnDestroy from toolbox');
   }
 
 }

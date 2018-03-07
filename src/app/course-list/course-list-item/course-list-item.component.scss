@@ -1,8 +1,9 @@
 $border-color: black;
+$background-grey: rgb(211, 211, 211);
 
 li {
     margin: 10px;
-    border: 1px solid $border-color;
+    border: 10px solid $border-color;
 }
 
 .course-list-item {
@@ -27,3 +28,14 @@ li {
     min-width: 100px;
 }
 
+.course-title, .course-time, .course-top-rated {
+    padding-right: 10px;
+}
+
+.top-rated-border {
+    background-color: $background-grey;
+}
+
+.course-top-rated-star {
+    font-size: 1.3em;
+}

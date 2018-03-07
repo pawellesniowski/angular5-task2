@@ -21,12 +21,10 @@ export class AppComponent {
   constructor(private serverService: ServerService, private zone: NgZone) {
     zone.onUnstable.subscribe(() => {
       this.date1 = Date.now();
-      console.log(this.date1);
     });
 
     zone.onStable.subscribe(() => {
       this.date2 = Date.now();
-      console.log(this.date1 - this.date2);
     });
   }
 

@@ -13,31 +13,33 @@ import { ServerService } from '../services/server.service';
 })
 export class CourseListComponent implements OnInit {
 
-  courses = [];
+  courses: any[] = [];
 
   constructor(private serverService: ServerService, private changeDetector: ChangeDetectorRef) { }
+
+  ngOnInit() {
+    this.getCourses();
+  }
 
   getCourses() {
     this.serverService.getList()
       .subscribe(
         (data: any) => {
           this.courses = data;
+          console.log(this.courses);
           this.changeDetector.markForCheck();
         },
         (error) => {
-          console.log(error);
+          this.courses = [];
+          console.log('getting data from server error: ', error);
           this.changeDetector.markForCheck();
         }
 
       );
   }
 
-  onDeleteMethod(event) {
+  onDeleteMethod(event: any) {
     console.log('onDeleteMethod from Parent: ', event);
-  }
-
-  ngOnInit() {
-    this.getCourses();
   }
 
 }

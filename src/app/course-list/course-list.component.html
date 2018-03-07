@@ -1,12 +1,22 @@
 <div class="course-list">
 
-  <ul>
-    <app-course-list-item
-      (deleteCourse)="onDeleteMethod($event)"
-      *ngFor="let item of courses" [course]="item"
-    >
-    </app-course-list-item>
-  </ul>
+  <div 
+    *ngIf="courses.length<1; else displayList"
+    class="no-data-to-display"
+  >
+    <p>No data. Fell free to add new course.</p>
+  </div>
+
+  <ng-template #displayList>
+    <ul>
+      <app-course-list-item
+        (deleteCourse)="onDeleteMethod($event)"
+        *ngFor="let item of courses" [course]="item"
+      >
+      </app-course-list-item>
+    </ul>
+  </ng-template>
+
   
 </div>
 

@@ -17,6 +17,7 @@ import { CourseListItemComponent } from './course-list/course-list-item/course-l
 import { AddCourseComponent } from './pages/add-course/add-course.component';
 import { ServerService } from './services/server.service';
 import { AuthService } from './services/auth.service';
+import { CreationDateBorderDirective } from './directives/creationDateBorder.directive';
 
 
 
@@ -31,7 +32,8 @@ import { AuthService } from './services/auth.service';
     ToolboxComponent,
     CourseListComponent,
     CourseListItemComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    CreationDateBorderDirective
   ],
   imports: [
     BrowserModule,

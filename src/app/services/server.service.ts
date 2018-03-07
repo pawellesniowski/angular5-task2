@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponseBase } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 
 @Injectable()
@@ -7,8 +9,10 @@ export class ServerService {
 
     constructor(private httpClient: HttpClient) {}
 
-    getList() {
-        return this.httpClient.get('http://localhost:4002/courses');
+    getList(): Observable<{}> {
+        return this.httpClient
+            .get('http://localhost:4002/courses');
+
     }
 
     createCourse(courseName: string, courseDescription: string) {

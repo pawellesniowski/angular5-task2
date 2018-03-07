@@ -9,11 +9,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   constructor() {
-    console.log('constructor from footer');
   }
 
   ngOnInit() {
-    console.log('ngOnInit from footer');
   }
 
 }
