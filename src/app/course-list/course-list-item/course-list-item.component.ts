@@ -3,6 +3,7 @@ import { CreationDateBorderDirective } from '../../directives/creationDateBorder
 
 
 import { ServerService } from '../../services/server.service';
+import { DurationPipe } from '../../pipes/duration.pipe';
 
 @Component({
   selector: 'app-course-list-item',

@@ -10,7 +10,7 @@
       <div class="course-list-item-header">
         <div>
           <span class="course-title">"{{course.name | uppercase }}"</span>
-          <span class="course-time">Time: {{course.length }} min</span>
+          <span class="course-time"> {{course.length | durationPipe }}</span>
           <span class="course-top-rated-star" *ngIf="course.isTopRated">&#9734;</span>
         </div>
         <div>{{course.date | date:"dd/MM/yy"}}</div>

@@ -18,6 +18,7 @@ import { AddCourseComponent } from './pages/add-course/add-course.component';
 import { ServerService } from './services/server.service';
 import { AuthService } from './services/auth.service';
 import { CreationDateBorderDirective } from './directives/creationDateBorder.directive';
+import { DurationPipe } from './pipes/duration.pipe';
 
 
 
@@ -33,7 +34,8 @@ import { CreationDateBorderDirective } from './directives/creationDateBorder.dir
     CourseListComponent,
     CourseListItemComponent,
     AddCourseComponent,
-    CreationDateBorderDirective
+    CreationDateBorderDirective,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
