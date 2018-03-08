@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 import { ServerService } from '../services/server.service';
+import { SortByPipe } from '../pipes/sort-by.pipe';
 
 
 @Component({

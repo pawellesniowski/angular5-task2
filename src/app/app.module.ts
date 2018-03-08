@@ -19,6 +19,7 @@ import { ServerService } from './services/server.service';
 import { AuthService } from './services/auth.service';
 import { CreationDateBorderDirective } from './directives/creationDateBorder.directive';
 import { DurationPipe } from './pipes/duration.pipe';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 
 
@@ -35,7 +36,8 @@ import { DurationPipe } from './pipes/duration.pipe';
     CourseListItemComponent,
     AddCourseComponent,
     CreationDateBorderDirective,
-    DurationPipe
+    DurationPipe,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
