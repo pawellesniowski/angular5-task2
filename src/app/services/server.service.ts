@@ -49,7 +49,6 @@ export class ServerService {
             console.log('delete course: ', id);
             return this.httpClient.delete(`http://localhost:4002/courses/${Number(id)}`);
         }
-
     }
 
 }

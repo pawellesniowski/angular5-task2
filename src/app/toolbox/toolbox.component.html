@@ -1,11 +1,12 @@
 <div class="toolbox">
+
   <div class="left-side">
-    <input placeholder="name fragment or date" [(ngModel)]="inputText">
-    <button (click)="onInputFind()">Find</button>
+    <input placeholder="type course title" [(ngModel)]="findCourse">
+    <button (click)="onFindCourse(findCourse)">Find</button>
   </div>
 
   <div class="right-side">
-    <button (click)="onCreateCourse()">Add course</button>
+    <button>Add course</button>
   </div>
 
 </div>

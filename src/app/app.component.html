@@ -4,13 +4,17 @@
     (InputFind)="inputFind($event)"
     *ngIf="!creatingNewCourse"
 ></app-toolbox>
-<app-course-list *ngIf="!creatingNewCourse"></app-course-list>
-<app-add-course *ngIf="creatingNewCourse" (BackToCourses)="backToCourses()"></app-add-course>
+<app-course-list></app-course-list>
+
 <app-footer></app-footer>
 
 <hr>
 
 <app-login></app-login>
+
+<hr>
+
+<app-add-course></app-add-course>
 
 
 

@@ -15,17 +15,17 @@ import {
 export class ToolboxComponent {
   inputText: string;
   @Output() CreateCourse = new EventEmitter<any>();
-  @Output() InputFind = new EventEmitter<any>();
+  @Output() searchTerm = new EventEmitter<any>();
 
   constructor() {
   }
 
-  onCreateCourse() {
+  onAddCourse() {
     this.CreateCourse.emit();
   }
 
-  onInputFind() {
-    this.InputFind.emit(this.inputText);
+  onFindCourse(findCourse) {
+    this.searchTerm.emit(this.inputText);
   }
 
 }

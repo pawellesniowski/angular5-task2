@@ -11,7 +11,7 @@
     <ul>
       <app-course-list-item
         (deleteCourse)="onDeleteMethod($event)"
-        *ngFor="let item of courses | sortByPipe | slice:0:5" [course]="item"
+        *ngFor="let item of courses | sortByPipe | filterOld " [course]="item"
 
       >        <!--  can we use slice pipe here to cut courses array ???-->
       </app-course-list-item>

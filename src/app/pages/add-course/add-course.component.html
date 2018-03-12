@@ -1,13 +1,17 @@
+<app-header></app-header>
+
 <div class="add-course-page">
     <div class="add-course-form">
 
+        <!-- title -->
         <div class="add-course-form-item">
-            <label for="course-name" class="course-name">Course Name</label>
+            <label for="course-name" class="course-name">Title</label>
             <input type="text" placeholder="course name" id="course-name" [(ngModel)]="courseName">            
         </div>
 
+        <!-- Description -->
         <div class="add-course-form-item">
-            <label for="course-description" class="course-description">Course Description</label>
+            <label for="course-description" class="course-description">Description</label>
             <textarea 
                 name="course-description" 
                 id="course-description" 
@@ -17,14 +21,26 @@
             ></textarea>
         </div>
 
+        <!-- Date -->
+        <app-course-date></app-course-date>
+
+        <!-- Duration -->
+        <app-course-duration></app-course-duration>
+
+        <!-- Authors -->
+        <app-course-authors></app-course-authors>
+
+        <!-- Buttons -->
         <div class="add-course-form-item">
-            <button (click)="onAddCourse()">Add</button>
-            <button (click)="onBackToCourses()">Back</button>
+            <button (click)="onAddCourse()">Save</button>
+            <button (click)="onBackToCourses()">Cancel</button>
         </div>
  
 
     </div> <!-- end of add-course-form form -->
 </div> <!-- end of add-course-page form -->
+
+<app-footer></app-footer>
 
 
 

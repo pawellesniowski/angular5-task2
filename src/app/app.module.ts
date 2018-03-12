@@ -20,6 +20,11 @@ import { AuthService } from './services/auth.service';
 import { CreationDateBorderDirective } from './directives/creationDateBorder.directive';
 import { DurationPipe } from './pipes/duration.pipe';
 import { SortByPipe } from './pipes/sort-by.pipe';
+import { FilterCoursesPipe } from './pipes/filter.pipe';
+import { FilterOldPipe } from './pipes/filter-old.pipe';
+import { CourseDateComponent } from './pages/add-course/course-date/course-date.component';
+import { CourseDurationComponent } from './pages/add-course/course-duration/course-duration.component';
+import { CourseAuthorsComponent } from './pages/add-course/course-authors/course-authors.component';
 
 
 
@@ -37,7 +42,12 @@ import { SortByPipe } from './pipes/sort-by.pipe';
     AddCourseComponent,
     CreationDateBorderDirective,
     DurationPipe,
-    SortByPipe
+    SortByPipe,
+    FilterCoursesPipe,
+    FilterOldPipe,
+    CourseDateComponent,
+    CourseDurationComponent,
+    CourseAuthorsComponent
   ],
   imports: [
     BrowserModule,
